@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="js/i18n/en.js"></script>
+<script src="js/i18n/zh-CN.js"></script>
+<script src="js/i18n/index.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -990,21 +993,21 @@ body {
 <!-- Sidebar -->
 <div id="sidebar">
   <div id="sidebar-header">
-    <span id="sidebar-title">API Tester</span>
+    <span id="sidebar-title" data-i18n="app.title">API Tester</span>
     <button id="btn-new">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-      New Chat
+      <span data-i18n="sidebar.newChat">New Chat</span>
     </button>
   </div>
   <div id="conv-list"></div>
   <div id="sidebar-footer">
     <button class="footer-btn" id="btn-export">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Export
+      <span data-i18n="sidebar.export">Export</span>
     </button>
     <button class="footer-btn danger" id="btn-clear-all">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
-      Clear All
+      <span data-i18n="sidebar.clearAll">Clear All</span>
     </button>
   </div>
 </div>
@@ -1015,19 +1018,19 @@ body {
 
   <!-- Topbar -->
   <div id="topbar">
-    <button class="icon-btn" id="btn-sidebar-toggle" type="button" title="Conversations" aria-label="Open conversations">
+    <button class="icon-btn" id="btn-sidebar-toggle" type="button" title="Conversations" aria-label="Open conversations" data-i18n-title="topbar.conversationsTitle" data-i18n-aria-label="topbar.conversationsAria">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
     </button>
-    <span class="key-selector-hint">API Key</span>
-    <select id="key-selector" title="Active API Key"></select>
+    <span class="key-selector-hint" data-i18n="topbar.apiKey">API Key</span>
+    <select id="key-selector" title="Active API Key" data-i18n-title="topbar.activeApiKey"></select>
     <div class="topbar-right">
-      <button class="icon-btn" id="btn-regen" style="display:none" title="Regenerate last reply">
+      <button class="icon-btn" id="btn-regen" style="display:none" title="Regenerate last reply" data-i18n-title="topbar.regenerateTitle">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
-        Regen
+        <span data-i18n="topbar.regenerate">Regen</span>
       </button>
       <button class="icon-btn" id="btn-settings">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        Settings
+        <span data-i18n="topbar.settings">Settings</span>
       </button>
     </div>
   </div>
@@ -1036,24 +1039,24 @@ body {
   <div id="messages">
     <div id="empty-state">
       <div class="es-icon">XXD</div>
-      <h2>Start a Conversation</h2>
-      <p>Add an API key in Settings, select a model above the chat box, then type a message below.</p>
+      <h2 data-i18n="empty.startTitle">Start a Conversation</h2>
+      <p data-i18n="empty.startDescription">Add an API key in Settings, select a model above the chat box, then type a message below.</p>
     </div>
   </div>
 
   <!-- Input -->
   <div id="input-area">
     <div id="model-bar">
-      <span class="model-bar-label">Model</span>
-      <select id="model-selector" title="Select model">
-        <option value="">Select a model...</option>
+      <span class="model-bar-label" data-i18n="input.model">Model</span>
+      <select id="model-selector" title="Select model" data-i18n-title="input.selectModel">
+        <option value="" data-i18n="input.selectModelPlaceholder">Select a model...</option>
       </select>
     </div>
     <div id="input-wrap">
-      <textarea id="user-input" rows="1" maxlength="20000" placeholder="Type a message..."></textarea>
-      <button id="send-btn">Send</button>
+      <textarea id="user-input" rows="1" maxlength="20000" placeholder="Type a message..." data-i18n-placeholder="input.messagePlaceholder"></textarea>
+      <button id="send-btn" data-i18n="input.send">Send</button>
     </div>
-    <div id="input-hint">Enter to send · Shift+Enter for new line</div>
+    <div id="input-hint" data-i18n="input.hint">Enter to send · Shift+Enter for new line</div>
   </div>
 
 </div>
@@ -1062,7 +1065,7 @@ body {
 <div id="overlay"></div>
 <div id="settings-drawer">
   <div class="drawer-header">
-    <span class="drawer-title">Settings</span>
+    <span class="drawer-title" data-i18n="settings.title">Settings</span>
     <button class="close-btn" id="btn-close-settings">✕</button>
   </div>
   <div class="drawer-body">
@@ -1070,10 +1073,10 @@ body {
     <!-- API Keys -->
     <div>
       <div class="section-header">
-        <span class="section-label">API Keys</span>
+        <span class="section-label" data-i18n="settings.apiKeys">API Keys</span>
         <button class="icon-btn" id="btn-add-key" style="padding:4px 10px;font-size:12px">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Add Key
+          <span data-i18n="settings.addKey">Add Key</span>
         </button>
       </div>
       <div id="key-list" style="margin-top:10px"></div>
@@ -1081,17 +1084,29 @@ body {
 
     <hr class="section-divider">
 
+    <div>
+      <div class="section-label" style="margin-bottom:14px" data-i18n="settings.language">Language</div>
+      <div class="field-group">
+        <select class="field-select" id="s-language">
+          <option value="en">English</option>
+          <option value="zh-CN">简体中文</option>
+        </select>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
     <!-- Request Defaults -->
     <div>
-      <div class="section-label" style="margin-bottom:14px">Request Defaults</div>
+      <div class="section-label" style="margin-bottom:14px" data-i18n="settings.requestDefaults">Request Defaults</div>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="field-group">
-          <label class="field-label">System Prompt</label>
-          <textarea class="field-textarea" id="s-system-prompt" placeholder="You are a helpful assistant."></textarea>
+          <label class="field-label" data-i18n="settings.systemPrompt">System Prompt</label>
+          <textarea class="field-textarea" id="s-system-prompt" placeholder="You are a helpful assistant." data-i18n-placeholder="settings.systemPromptPlaceholder"></textarea>
         </div>
         <div class="field-group">
           <label class="field-label" style="display:flex;justify-content:space-between">
-            Temperature <span id="temp-val" class="range-val">0.7</span>
+            <span data-i18n="settings.temperature">Temperature</span> <span id="temp-val" class="range-val">0.7</span>
           </label>
           <div class="range-row">
             <span style="font-size:11px;color:var(--text3)">0</span>
@@ -1100,14 +1115,14 @@ body {
           </div>
         </div>
         <div class="field-group">
-          <label class="field-label">Max Tokens</label>
-          <input class="field-input" id="s-max-tokens" type="number" placeholder="Leave empty for default" min="1">
+          <label class="field-label" data-i18n="settings.maxTokens">Max Tokens</label>
+          <input class="field-input" id="s-max-tokens" type="number" placeholder="Leave empty for default" min="1" data-i18n-placeholder="settings.maxTokensPlaceholder">
         </div>
         <div class="field-group">
-          <label class="field-label">Stream Response</label>
+          <label class="field-label" data-i18n="settings.streamResponse">Stream Response</label>
           <select class="field-select" id="s-stream">
-            <option value="true">Enabled</option>
-            <option value="false">Disabled</option>
+            <option value="true" data-i18n="settings.enabled">Enabled</option>
+            <option value="false" data-i18n="settings.disabled">Disabled</option>
           </select>
         </div>
       </div>
@@ -1118,35 +1133,35 @@ body {
     <!-- Model Presets -->
     <div>
       <div class="section-header">
-        <span class="section-label">Model Presets</span>
-        <button class="icon-btn" id="btn-reset-presets" style="padding:4px 8px;font-size:11px;display:none" title="Reset to built-in defaults">Reset</button>
+        <span class="section-label" data-i18n="settings.modelPresets">Model Presets</span>
+        <button class="icon-btn" id="btn-reset-presets" style="padding:4px 8px;font-size:11px;display:none" title="Reset to built-in defaults" data-i18n="settings.reset" data-i18n-title="settings.resetTitle">Reset</button>
       </div>
       <div id="preset-list" style="margin-top:10px;display:flex;flex-direction:column;gap:6px"></div>
       <div id="preset-add-group-row" style="display:none;margin-top:8px" class="row-group">
-        <input class="field-input" id="preset-new-group" type="text" placeholder="Group name..." style="font-size:13px">
-        <button class="btn-primary" id="preset-add-group-confirm" style="padding:7px 12px;flex-shrink:0">Add</button>
+        <input class="field-input" id="preset-new-group" type="text" placeholder="Group name..." style="font-size:13px" data-i18n-placeholder="settings.groupNamePlaceholder">
+        <button class="btn-primary" id="preset-add-group-confirm" style="padding:7px 12px;flex-shrink:0" data-i18n="settings.add">Add</button>
         <button class="btn-secondary" id="preset-add-group-cancel" style="padding:7px 10px;flex-shrink:0">✕</button>
       </div>
-      <button class="btn-secondary" id="btn-add-preset-group" style="width:100%;margin-top:8px;font-size:12px;display:none">+ Add Group</button>
+      <button class="btn-secondary" id="btn-add-preset-group" style="width:100%;margin-top:8px;font-size:12px;display:none" data-i18n="settings.addGroup">+ Add Group</button>
     </div>
 
     <hr class="section-divider">
 
     <!-- Storage -->
     <div>
-      <div class="section-label" style="margin-bottom:10px">Storage</div>
+      <div class="section-label" style="margin-bottom:10px" data-i18n="settings.storage">Storage</div>
       <div id="storage-status" class="status-badge">
-        <span class="status-dot"></span> Checking...
+        <span class="status-dot"></span> <span data-i18n="settings.checking">Checking...</span>
       </div>
       <div class="field-desc" style="margin-top:8px">
-        Run <code>python3 server.py</code> to save data to <code>settings.json</code> and <code>conversations.json</code> in the <code>api/</code> folder.
-        Otherwise data is saved to browser storage.
+        <span data-i18n-html="settings.storageDescriptionServer">Run <code>python3 server.py</code> to save data to <code>settings.json</code> and <code>conversations.json</code> in the <code>api/</code> folder.</span>
+        <span data-i18n="settings.storageDescriptionBrowser">Otherwise data is saved to browser storage.</span>
       </div>
     </div>
 
   </div>
   <div class="drawer-footer">
-    <button class="btn-primary" id="btn-save-settings" style="width:100%">Save Settings</button>
+    <button class="btn-primary" id="btn-save-settings" style="width:100%" data-i18n="settings.save">Save Settings</button>
   </div>
 </div>
 
@@ -1239,7 +1254,7 @@ function refreshPresetsDropdowns() {
   const current = settings.model || '';
 
   const activeGroups = getPresets().filter(g => g.keyId === settings.activeKeyId);
-  sel.innerHTML = `<option value="">Select a model...</option>${buildPresetsHTML(activeGroups)}`;
+  sel.innerHTML = `<option value="">${escHtml(t('input.selectModelPlaceholder'))}</option>${buildPresetsHTML(activeGroups)}`;
 
   const valid = current && activeGroups.some(g => g.models.includes(current));
   if (valid) sel.value = current;
@@ -1288,6 +1303,7 @@ function renderPresetList() {
 let settings = {
   activeKeyId: null,
   apiKeys: [],        // [{id, name, baseUrl, key}]
+  language: 'en',
   model: '',
   systemPrompt: '',
   temperature: 0.7,
@@ -1432,6 +1448,25 @@ function normalizeConversations(list) {
   return changed;
 }
 
+function detectInitialLanguage() {
+  const browserLanguage = navigator.language || navigator.userLanguage || I18N.DEFAULT_LANGUAGE;
+  return I18N.resolveLanguage(browserLanguage);
+}
+
+function applyLanguage(language, options = {}) {
+  settings.language = I18N.setLanguage(language || settings.language || detectInitialLanguage());
+  document.title = t('app.title');
+  if ($('#s-language')) $('#s-language').value = settings.language;
+  if ($('#send-btn')) setSendStop(!!abortController);
+  updateStorageStatus();
+  refreshPresetsDropdowns();
+  renderKeySelector();
+  renderKeyList();
+  renderPresetList();
+  renderConvList();
+  renderMessages();
+}
+
 // ── File storage via server (or localStorage fallback) ────────────────────────
 async function detectServerBackend() {
   useServerStorage = false;
@@ -1495,23 +1530,25 @@ async function loadSettingsFromFile() {
     // Discard old presets without keyId and ensure groups exist for keys.
     ensureCustomPresets();
   }
+
+  settings.language = I18N.resolveLanguage(settings.language || detectInitialLanguage());
 }
 
 function applySettingsToUI() {
+  $('#s-language').value        = settings.language || I18N.DEFAULT_LANGUAGE;
   $('#s-system-prompt').value = settings.systemPrompt || '';
   $('#s-temperature').value   = settings.temperature ?? 0.7;
   $('#temp-val').textContent  = settings.temperature ?? 0.7;
   $('#s-max-tokens').value    = settings.maxTokens || '';
   $('#s-stream').value        = (settings.stream !== false).toString();
 
-  refreshPresetsDropdowns();
+  applyLanguage(settings.language);
 
-  renderKeySelector();
-  renderKeyList();
-  renderPresetList();
+  refreshPresetsDropdowns();
 }
 
 function readGeneralFromUI() {
+  settings.language     = I18N.resolveLanguage($('#s-language').value);
   settings.systemPrompt = $('#s-system-prompt').value;
   settings.temperature  = parseFloat($('#s-temperature').value);
   settings.maxTokens    = $('#s-max-tokens').value;
@@ -1549,7 +1586,7 @@ function getActiveKey() {
 }
 
 function deleteKey(id) {
-  if (!confirm('Delete this API key?')) return;
+  if (!confirm(t('key.deleteConfirm'))) return;
   settings.apiKeys = settings.apiKeys.filter(k => k.id !== id);
   if (settings.activeKeyId === id) {
     settings.activeKeyId = settings.apiKeys[0]?.id || null;
@@ -1573,9 +1610,9 @@ function saveKeyFromForm(form) {
   const url   = form.querySelector('.kf-url').value.trim().replace(/\/$/, '');
   const key   = form.querySelector('.kf-key').value.trim();
 
-  if (!name)  { toast('Name is required'); return; }
-  if (!url)   { toast('Base URL is required'); return; }
-  if (!key)   { toast('API Key is required'); return; }
+  if (!name)  { toast(t('key.nameRequired')); return; }
+  if (!url)   { toast(t('key.baseUrlRequired')); return; }
+  if (!key)   { toast(t('key.apiKeyRequired')); return; }
 
   const editId = form.dataset.editing;
   if (editId === 'new') {
@@ -1612,7 +1649,7 @@ function saveKeyFromForm(form) {
   renderKeySelector();
   refreshPresetsDropdowns();
   renderPresetList();
-  toast('Key saved');
+  toast(t('key.saved'));
 }
 
 async function testKeyFromForm(form) {
@@ -1621,13 +1658,13 @@ async function testKeyFromForm(form) {
   const editId = form.dataset.editing;
   const chatModel = settings.model || '';
 
-  if (!url || !key) { toast('Base URL and API Key are required'); return; }
+  if (!url || !key) { toast(t('key.baseUrlAndKeyRequired')); return; }
 
   let modelToUse = '';
   if (editId === 'new') {
     const formModelInput = form.querySelector('.kf-model');
     modelToUse = formModelInput ? formModelInput.value.trim() : '';
-    if (!modelToUse) { toast('Enter a model name above to test this connection'); return; }
+    if (!modelToUse) { toast(t('key.enterModelToTest')); return; }
   } else {
     const group = Array.isArray(settings.presets) ? settings.presets.find(p => p.keyId === editId) || null : null;
     const models = group?.models || [];
@@ -1635,7 +1672,7 @@ async function testKeyFromForm(form) {
   }
 
   if (!modelToUse) {
-    toast('This key has no models yet. Add at least one model in Settings -> Model Presets, then try Test Connection again');
+    toast(t('key.noModelsYet'));
     return;
   }
 
@@ -1643,7 +1680,7 @@ async function testKeyFromForm(form) {
   const testBtn  = form.querySelector('.kf-test-btn');
 
   statusEl.className = 'kf-test-status status-badge show';
-  statusEl.innerHTML = '<span class="status-dot"></span> Testing...';
+  statusEl.innerHTML = `<span class="status-dot"></span> ${escHtml(t('key.testing'))}`;
   testBtn.disabled = true;
 
   const ac = new AbortController();
@@ -1659,7 +1696,7 @@ async function testKeyFromForm(form) {
     clearTimeout(timer);
     if (resp.ok || resp.status === 400) {
       statusEl.className = 'kf-test-status status-badge show ok';
-      statusEl.innerHTML = '<span class="status-dot"></span> Connected ✓';
+      statusEl.innerHTML = `<span class="status-dot"></span> ${escHtml(t('key.connected'))} ✓`;
     } else {
       let errMsg = `HTTP ${resp.status}`;
       try {
@@ -1673,7 +1710,7 @@ async function testKeyFromForm(form) {
   } catch(e) {
     clearTimeout(timer);
     statusEl.className = 'kf-test-status status-badge show err';
-    const msg = e.name === 'AbortError' ? 'Connection timed out (20s)' : friendlyError(e);
+    const msg = e.name === 'AbortError' ? t('key.timeout') : friendlyError(e);
     statusEl.style.cssText += ';white-space:pre-wrap;max-width:100%;border-radius:6px;padding:8px 10px';
     statusEl.innerHTML = `<span class="status-dot" style="flex-shrink:0"></span> <span>${escHtml(msg)}</span>`;
   } finally {
@@ -1684,7 +1721,7 @@ async function testKeyFromForm(form) {
 // ── Conversation management ───────────────────────────────────────────────────
 function newConv() {
   const id   = Date.now().toString();
-  const conv = { id, name: 'New Chat', created: Date.now(), messages: [] };
+  const conv = { id, name: t('conversation.newChat'), created: Date.now(), messages: [] };
   conversations.unshift(conv);
   persistConversations();
   renderConvList();
@@ -1708,7 +1745,7 @@ function deleteConv(id) {
 }
 
 function clearAll() {
-  if (!confirm('Delete all conversations? This cannot be undone.')) return;
+  if (!confirm(t('conversation.deleteAllConfirm'))) return;
   conversations = [];
   activeConvId  = null;
   persistConversations();
@@ -1722,7 +1759,7 @@ function activeConv() {
 }
 
 function autoNameConv(conv) {
-  if (conv.name !== 'New Chat') return;
+  if (conv.name !== t('conversation.newChat')) return;
   const first = conv.messages.find(m => m.role === 'user');
   if (first) conv.name = first.content.slice(0, 42) + (first.content.length > 42 ? '…' : '');
 }
@@ -1918,8 +1955,8 @@ async function sendMessage() {
   if (!text || abortController) return;
 
   const activeKey = getActiveKey();
-  if (!activeKey) { toast('Add an API key in Settings first'); openSettings(); return; }
-  if (!settings.model) { toast('Select a model above the chat box'); return; }
+  if (!activeKey) { toast(t('toast.addKeyFirst')); openSettings(); return; }
+  if (!settings.model) { toast(t('toast.selectModelFirst')); return; }
 
   if (!activeConvId) newConv();
   const conv = activeConv();
@@ -1951,7 +1988,7 @@ async function sendMessage() {
       const msg = friendlyError(e);
       assistantMsg.content = `**Error:** ${msg}`;
     } else {
-      if (!assistantMsg.content) assistantMsg.content = '*[Stopped]*';
+      if (!assistantMsg.content) assistantMsg.content = t('message.stopped');
     }
   } finally {
     contentEl.classList.remove('streaming-cursor');
@@ -2118,8 +2155,8 @@ async function regenFrom(idx) {
   renderMessages();
   // Re-trigger send using trimmed conv
   const activeKey = getActiveKey();
-  if (!activeKey) { toast('No active API key'); return; }
-  if (!settings.model) { toast('Select a model above the chat box'); return; }
+  if (!activeKey) { toast(t('toast.noActiveKey')); return; }
+  if (!settings.model) { toast(t('toast.selectModelFirst')); return; }
 
   const assistantMsg = { role: 'assistant', content: '', thinking: '', hasThinking: false, time: Date.now(), model: settings.model };
   conv.messages.push(assistantMsg);
@@ -2199,9 +2236,9 @@ function escHtml(s) {
 }
 function relTime(ts) {
   const d = Date.now() - ts;
-  if (d < 60000)    return 'Just now';
-  if (d < 3600000)  return `${Math.floor(d/60000)}m ago`;
-  if (d < 86400000) return `${Math.floor(d/3600000)}h ago`;
+  if (d < 60000)    return t('time.justNow');
+  if (d < 3600000)  return t('time.minutesAgo', { count: Math.floor(d / 60000) });
+  if (d < 86400000) return t('time.hoursAgo', { count: Math.floor(d / 3600000) });
   return new Date(ts).toLocaleDateString();
 }
 function toast(msg, ms = 2800) {
@@ -2214,7 +2251,7 @@ function toast(msg, ms = 2800) {
 function copyText(btn, text) {
   navigator.clipboard.writeText(text).then(() => {
     const o = btn.textContent;
-    btn.textContent = 'Copied!';
+    btn.textContent = t('message.copied');
     setTimeout(() => btn.textContent = o, 1500);
   });
 }
@@ -2226,7 +2263,7 @@ function syncSendButton() {
 }
 function setSendStop(stop) {
   const b = $('#send-btn');
-  b.textContent = stop ? 'Stop' : 'Send';
+  b.textContent = stop ? t('input.stop') : t('input.send');
   b.classList.toggle('stop', stop);
   b.disabled = !stop && !settings.model;
 }
@@ -2250,7 +2287,7 @@ function exportConversations() {
   a.download = `conversations_${new Date().toISOString().slice(0,10)}.json`;
   a.click();
   URL.revokeObjectURL(url);
-  toast('Conversations exported');
+  toast(t('conversation.exported'));
 }
 function autoResize(el) {
   el.style.height = 'auto';
@@ -2276,6 +2313,212 @@ function handleMobileLayoutChange(e) {
 }
 if (mobileSidebarQuery.addEventListener) mobileSidebarQuery.addEventListener('change', handleMobileLayoutChange);
 else if (mobileSidebarQuery.addListener) mobileSidebarQuery.addListener(handleMobileLayoutChange);
+
+function updateStorageStatus() {
+  const el = $('#storage-status');
+  if (useServerStorage) {
+    el.className = 'status-badge ok';
+    el.innerHTML = `<span class="status-dot"></span> ${escHtml(t('storage.serverStatus', { host: window.location.host }))}`;
+  } else {
+    el.className = 'status-badge';
+    el.innerHTML = `<span class="status-dot"></span> ${escHtml(t('storage.browserStatus'))}`;
+  }
+}
+
+function renderKeySelector() {
+  const sel = $('#key-selector');
+  if (!settings.apiKeys.length) {
+    sel.innerHTML = `<option value="">${escHtml(t('key.noKeysInSelector'))}</option>`;
+    return;
+  }
+  sel.innerHTML = settings.apiKeys.map((k) =>
+    `<option value="${escHtml(k.id)}" ${k.id === settings.activeKeyId ? 'selected' : ''}>${escHtml(k.name)}</option>`
+  ).join('');
+}
+
+function renderPresetList() {
+  const container = $('#preset-list');
+  const presets = getPresets();
+  container.innerHTML = presets.map((g, gi) => `
+    <div class="preset-group" data-gi="${gi}">
+      <div class="preset-group-header">
+        <button class="preset-toggle" title="Expand / Collapse">></button>
+        <span class="preset-group-label" data-gi="${gi}" title="Click to rename">${escHtml(g.label)}</span>
+        <span class="preset-model-count">${g.models.length}</span>
+      </div>
+      <div class="preset-group-body" style="display:none">
+        ${g.models.length === 0 ? `<div style="font-size:12px;color:var(--text3);padding:3px 2px">${escHtml(t('presets.noModelsYet'))}</div>` : ''}
+        ${g.models.map((m, mi) => `
+          <div class="preset-model-row">
+            <span class="preset-model-name">
+              ${escHtml(m)}
+              ${Array.isArray(settings.thinkingModels) && settings.thinkingModels.includes(m)
+                ? `<span style="color:var(--accent);font-size:11px;margin-left:6px;white-space:nowrap">${escHtml(t('key.thinking'))}</span>`
+                : ''}
+            </span>
+            <button class="key-act-btn del preset-del-model" data-gi="${gi}" data-mi="${mi}" title="${escHtml(t('key.deleteTitle'))}">x</button>
+          </div>`).join('')}
+        <div class="preset-add-row">
+          <input class="field-input preset-new-model" type="text" placeholder="${escHtml(t('presets.modelNamePlaceholder'))}" spellcheck="false" style="font-size:12px;padding:5px 8px">
+          <button class="btn-secondary preset-add-model-btn" data-gi="${gi}" style="padding:5px 10px;font-size:12px;flex-shrink:0">${escHtml(t('settings.add'))}</button>
+          <label class="preset-thinking-mark" title="Whether this model may output reasoning/thought">
+            <input type="checkbox" class="preset-thinking-flag"> ${escHtml(t('key.thinking'))}
+          </label>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function buildKeyItem(k) {
+  const isActive = k.id === settings.activeKeyId;
+  const visibleLength = Math.max(Math.min((k.key || '').length - 4, 8), 0);
+  const masked = k.key ? `${'*'.repeat(visibleLength)}${k.key.slice(-4)}` : '-';
+  const urlShort = k.baseUrl.replace(/^https?:\/\//, '').slice(0, 32);
+  return `
+    <div class="key-item ${isActive ? 'active' : ''}" data-id="${escHtml(k.id)}">
+      <div class="key-item-main">
+        <div class="key-item-name">${escHtml(k.name)}</div>
+        <div class="key-item-meta">
+          <span class="key-item-url">${escHtml(urlShort)}</span>
+        </div>
+        <div class="key-item-masked">${escHtml(masked)}</div>
+      </div>
+      <div class="key-item-btns">
+        <button class="key-act-btn edit" title="${escHtml(t('key.editTitle'))}">E</button>
+        <button class="key-act-btn del" title="${escHtml(t('key.deleteTitle'))}">x</button>
+      </div>
+    </div>`;
+}
+
+function buildKeyForm(k) {
+  const isNew = k.id === 'new';
+  return `
+    <div class="key-form" data-editing="${escHtml(k.id)}">
+      <div class="field-group">
+        <label class="field-label">${escHtml(t('key.nameRemark'))}</label>
+        <input class="field-input kf-name" type="text" value="${escHtml(k.name)}" placeholder="${escHtml(t('key.namePlaceholder'))}">
+      </div>
+      <div class="field-group">
+        <label class="field-label">${escHtml(t('key.baseUrl'))}</label>
+        <input class="field-input kf-url" type="text" value="${escHtml(k.baseUrl)}" placeholder="https://api.openai.com/v1" spellcheck="false">
+      </div>
+      <div class="field-group">
+        <label class="field-label">${escHtml(t('key.apiKey'))}</label>
+        <div class="row-group">
+          <input class="field-input kf-key" type="password" value="${escHtml(k.key || '')}" placeholder="sk-..." autocomplete="off">
+          <button class="btn-secondary kf-toggle-key" type="button" style="flex-shrink:0">${escHtml(t('key.show'))}</button>
+        </div>
+      </div>
+      ${isNew ? `
+      <div class="field-group">
+        <label class="field-label">${escHtml(t('key.initialModel'))} <span style="font-weight:400;color:var(--text3)">${escHtml(t('key.optional'))}</span></label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input class="field-input kf-model" type="text" placeholder="${escHtml(t('key.initialModelPlaceholder'))}" spellcheck="false" style="flex:1">
+          <label class="preset-thinking-mark">
+            <input type="checkbox" class="kf-thinking-flag"> ${escHtml(t('key.thinking'))}
+          </label>
+        </div>
+      </div>` : ''}
+      <div class="key-form-test">
+        <button class="btn-secondary kf-test-btn" type="button">${escHtml(t('key.testConnection'))}</button>
+        <div class="kf-test-status status-badge"></div>
+      </div>
+      <div class="key-form-btns">
+        <button class="btn-secondary kf-cancel-btn" type="button">${escHtml(t('key.cancel'))}</button>
+        <button class="btn-primary kf-save-btn" type="button">${escHtml(isNew ? t('key.addKey') : t('key.save'))}</button>
+      </div>
+    </div>`;
+}
+
+function renderKeyList() {
+  const container = $('#key-list');
+  let html = '';
+
+  if (editingKeyId === 'new') html += buildKeyForm({ id: 'new', name: '', baseUrl: '', key: '' });
+
+  if (!settings.apiKeys.length && editingKeyId !== 'new') {
+    html += `<div class="key-empty">${escHtml(t('key.empty'))}</div>`;
+  }
+
+  for (const k of settings.apiKeys) {
+    html += editingKeyId === k.id ? buildKeyForm(k) : buildKeyItem(k);
+  }
+
+  container.innerHTML = html;
+}
+
+function renderConvList() {
+  const list = $('#conv-list');
+  if (!conversations.length) {
+    list.innerHTML = `<div style="padding:16px 10px;font-size:12px;color:var(--text3);text-align:center">${escHtml(t('sidebar.noConversations'))}</div>`;
+    return;
+  }
+  list.innerHTML = conversations.map((c) => `
+    <div class="conv-item ${c.id === activeConvId ? 'active' : ''}" data-id="${c.id}">
+      <div class="conv-item-text">
+        <div class="conv-item-name">${escHtml(c.name)}</div>
+        <div class="conv-item-date">${relTime(c.created)}</div>
+      </div>
+      <button class="conv-del" data-del="${c.id}">x</button>
+    </div>`).join('');
+}
+
+function renderAssistantContentHTML(msg, thinkingOpen) {
+  const thinking = msg.thinking || '';
+  const content = msg.content || '';
+  const thinkingHtml = thinking
+    ? `<details class="thinking-details"${thinkingOpen ? ' open' : ''}><summary>${escHtml(t('message.thinking'))}</summary>${marked.parse(thinking)}</details>`
+    : '';
+  return `${thinkingHtml}${content ? marked.parse(content) : ''}`;
+}
+
+function buildMsgHTML(msg, idx) {
+  const isUser = msg.role === 'user';
+  if (!isUser) normalizeAssistantMessage(msg);
+  const content = isUser
+    ? `<div class="msg-content">${escHtml(msg.content).replace(/\n/g, '<br>')}</div>`
+    : `<div class="msg-content">${renderAssistantContentHTML(msg, false)}</div>`;
+  const metaParts = [];
+  if (msg.model) metaParts.push(`<span style="color:var(--accent);background:rgba(108,99,255,.1);padding:1px 7px;border-radius:10px">${escHtml(msg.model)}</span>`);
+  if (msg.tokens) metaParts.push(`P ${msg.tokens.prompt_tokens || 0} C ${msg.tokens.completion_tokens || 0} T ${msg.tokens.total_tokens || 0}`);
+  const tokenInfo = metaParts.length ? `<div class="token-info" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">${metaParts.join('')}</div>` : '';
+  const escapedContent = msg.content
+    .replace(/\\/g, '\\\\')
+    .replace(/`/g, '\\`')
+    .replace(/\$\{/g, '\\${');
+  return `
+    <div class="msg-row ${msg.role}">
+      <div class="msg-avatar">${isUser ? 'U' : 'AI'}</div>
+      <div class="msg-body">
+        <div class="msg-meta">
+          <span class="msg-role">${escHtml(isUser ? t('message.you') : t('message.assistant'))}</span>
+          ${msg.time ? `<span>${new Date(msg.time).toLocaleTimeString()}</span>` : ''}
+        </div>
+        ${content}
+        ${tokenInfo}
+        <div class="msg-actions">
+          <button class="action-btn" onclick="copyText(this,\`${escapedContent}\`)">${escHtml(t('message.copy'))}</button>
+          ${!isUser ? `<button class="action-btn" onclick="regenFrom(${idx})">${escHtml(t('message.regenerate'))}</button>` : ''}
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderMessages() {
+  const conv = activeConv();
+  const container = $('#messages');
+  if (!conv || !conv.messages.length) {
+    container.innerHTML = `
+      <div id="empty-state">
+        <div class="es-icon">XXD</div>
+        <h2>${escHtml(conv ? t('empty.conversationTitle') : t('empty.selectChatTitle'))}</h2>
+        <p>${escHtml(conv ? t('empty.conversationDescription') : t('empty.selectChatDescription'))}</p>
+      </div>`;
+    return;
+  }
+  container.innerHTML = conv.messages.map((m, i) => buildMsgHTML(m, i)).join('');
+  container.scrollTop = container.scrollHeight;
+}
 
 // ── Events ────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -2337,9 +2580,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   $('#btn-save-settings').addEventListener('click', () => {
     readGeneralFromUI();
+    applyLanguage(settings.language);
     persistSettings();
-    toast('Settings saved');
+    toast(t('toast.settingsSaved'));
     closeSettings();
+  });
+
+  $('#s-language').addEventListener('change', e => {
+    settings.language = I18N.resolveLanguage(e.target.value);
+    applyLanguage(settings.language);
   });
 
   $('#s-temperature').addEventListener('input', e => $('#temp-val').textContent = e.target.value);
@@ -2354,7 +2603,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (delGroup) {
       const gi = parseInt(delGroup.dataset.gi);
-      if (!confirm(`Delete group "${getPresets()[gi].label}"?`)) return;
+      if (!confirm(t('conversation.deleteGroupConfirm', { label: getPresets()[gi].label }))) return;
       ensureCustomPresets();
       const groupModels = settings.presets[gi]?.models || [];
       settings.presets.splice(gi, 1);
@@ -2480,11 +2729,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Reset presets
   $('#btn-reset-presets').addEventListener('click', () => {
-    if (!confirm('Reset to built-in defaults? All custom presets will be lost.')) return;
+    if (!confirm(t('presets.resetConfirm'))) return;
     settings.presets = null;
     settings.thinkingModels = [];
     persistSettings(); renderPresetList(); refreshPresetsDropdowns();
-    toast('Presets reset to defaults');
+    toast(t('presets.resetDone'));
   });
 
   // Add key button
@@ -2520,7 +2769,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else if (toggleBtn) {
       const inp = toggleBtn.previousElementSibling;
       inp.type = inp.type === 'password' ? 'text' : 'password';
-      toggleBtn.textContent = inp.type === 'password' ? 'Show' : 'Hide';
+      toggleBtn.textContent = inp.type === 'password' ? t('key.show') : t('key.hide');
     } else if (keyItem && !e.target.closest('.key-item-btns')) {
       // Click on key item to make it active
       settings.activeKeyId = keyItem.dataset.id;
