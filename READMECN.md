@@ -22,11 +22,11 @@
 1. 在项目目录中打开 `PowerShell` 或 `命令提示符`。
 2. 使用默认端口 `8080` 启动本地服务：
    ```powershell
-   py server.py
+   python server.py
    ```
 3. 如需使用自定义端口，例如 `9000`：
    ```powershell
-   py server.py 9000
+   python server.py 9000
    ```
 4. 打开浏览器并访问 `http://localhost:8080`，如果使用了自定义端口，则访问 `http://localhost:<your-port>`。
 5. 如果需要让同一局域网中的其他设备访问，可打开 `http://<your-local-ip>:8080`，或访问 `http://<your-local-ip>:<your-port>`。

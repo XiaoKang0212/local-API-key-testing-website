@@ -22,11 +22,11 @@
 1. Open `PowerShell` or `Command Prompt` in the project directory.
 2. Start the local server on the default port `8080`:
    ```powershell
-   py server.py
+   python server.py
    ```
 3. Or start it on a custom port, for example `9000`:
    ```powershell
-   py server.py 9000
+   python server.py 9000
    ```
 4. Open your browser and visit `http://localhost:8080`, or `http://localhost:<your-port>` if you used a custom port.
 5. To access it from other devices on the same LAN, open `http://<your-local-ip>:8080` or `http://<your-local-ip>:<your-port>`.
